@@ -153,6 +153,15 @@ cpx_nonco2$GHG <- factor(cpx_nonco2$GHG, levels = c("CO2e", "NOx", "SO2", "PM2.5
 cpx_nonco2$major_sector <- factor(cpx_nonco2$major_sector, levels = 
                                     c("agriculture", "industry", "power", "residential commercial", "transportation", "DAC", "land use"))
 
+# These are NEI 2017 values!! 
+# https://www.epa.gov/sites/default/files/2019-04/documents/2019_fast_facts_508_0.pdf 
+cpx_nonco2[8:13, "emis"] <- 
+  6.457 * c((0.09 + 0.013), 0.22, -0.013, 0.28, 0.11, 0.29)
+# https://gaftp.epa.gov/air/emismod/2017/2017emissions/ 
+cpx_nonco2[27:32, "emis"] <- c(.009, 1.796, 0, 0.758, 0.483, 3.186)
+cpx_nonco2[46:51, "emis"] <- c(.030, 0.326, 0, 0.103, 1.487, 0.159)
+cpx_nonco2[65:70, "emis"] <- c(.005, 0.600, 0, 1.282, 0.158, 0.244)
+
 cpx_fig2a <- ggplot(data = cpx_nonco2) +
   geom_col(mapping = aes(x = GHG, y = emis, fill = major_sector)) + 
   facet_wrap(~scenario, labeller = labeller(scenario = c("REF X2015" = "2017", "REF X2050" = "Reference 2050", "NZ X2050" = "Net-Zero 2050"))) +
@@ -193,7 +202,7 @@ cpx_fig2b <-
   guides(fill = guide_legend(order = 1)) +
   ggnewscale::new_scale_fill() +
   geom_polygon(data = cpx_nox_viz %>% filter(!order %in% c(7, 1, 6)), aes(x = long, y = lat, group = group, fill = dNOx_REF * 1e3), color="black", key_glyph = draw_key_lower_hex, lwd = 0.05) +
-  scale_fill_gradientn(colors = c("darkorange4", "darkorange", "white"), limits = c(-600, 0), values = c(0, 400/600, 1), breaks = c(-600, -400, -200, 0)) + 
+  scale_fill_gradientn(colors = c("darkorange4", "darkorange", "white"), limits = c(-300, 0), values = c(0, 200/300, 1), breaks = c(-300, -200, -100, 0)) + 
   labs(fill = "NO<sub>x</sub> emissions <br>(kilo ton)", 
        title = '<b>b) State-level changes in the energy system CO<sub>2</sub> and NO<sub>x</sub> <br>emissions in Reference 2050 compared to 2017</b>') +
   guides(fill = guide_legend(order = 2)) +
@@ -218,7 +227,7 @@ cpx_fig2c <-
   guides(fill = guide_legend(order = 1)) +
   ggnewscale::new_scale_fill() +
   geom_polygon(data = cpx_nox_viz %>% filter(!order %in% c(7, 1, 6)), aes(x = long, y = lat, group = group, fill = dNOx_NZ * 1e3), color="black", key_glyph = draw_key_lower_hex, lwd = 0.05) +
-  scale_fill_gradientn(colors = c("darkorange4", "darkorange", "white"), limits = c(-600, 0), values = c(0, 400/600, 1), breaks = c(-600, -400, -200, 0)) + 
+  scale_fill_gradientn(colors = c("darkorange4", "darkorange", "white"), limits = c(-300, 0), values = c(0, 200/300, 1), breaks = c(-300, -200, -100, 0)) + 
   labs(fill = "NO<sub>x</sub> emissions <br>(kilo ton)", 
        title = '<b>c) State-level changes in the energy system CO<sub>2</sub> and NO<sub>x</sub> <br>emissions in Net-Zero 2050 compared to 2017</b>') +
   guides(fill = guide_legend(order = 2)) +
