@@ -16,6 +16,7 @@ This repository contains the R code and input data used in our study analyzing d
 - **Operating system**: macOS or Linux (tested on Ventura 13.6 and Ubuntu 22.04)
 - **R version**: ≥ 4.2.0
 - **Memory**: ≥ 8 GB RAM recommended due to use of raster operations
+- **Typical installation time**: ~5–10 minutes for package setup on a standard desktop computer with a stable internet connection
 
 ## R Package Dependencies
 
@@ -53,6 +54,10 @@ To reproduce the results, run the scripts in the following general order:
 
 Each script is self-contained and will read from the `input_data/` folder and write outputs (figures and processed results) to the working directory.
 
+## Runtime
+
+* Typical runtime: 10–30 minutes depending on system specs
+
 ## Reproducibility
 
 All input data and R scripts are included to reproduce the key results and figures in the manuscript and supplementary materials.
@@ -60,6 +65,5 @@ All input data and R scripts are included to reproduce the key results and figur
 ## License
 
 This repository is licensed under the [MIT License](https://opensource.org/licenses/MIT). You are free to reuse and adapt the code with appropriate attribution.
-
 
 
