@@ -1,4 +1,4 @@
-````markdown
+
 # Complex factors influencing US air pollution equity under a Net-Zero transition
 
 This repository contains the R code and input data used in our study analyzing disparities in air pollution exposure across different racial/ethnic groups under net-zero decarbonization scenarios in the United States.
