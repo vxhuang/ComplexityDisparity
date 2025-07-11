@@ -53,11 +53,11 @@ To reproduce the results, run the scripts in the following general order:
 
 Each script is self-contained and will read from the `input_data/` folder and write outputs (figures and processed results) to the working directory.
 
-## 🔁 Reproducibility
+## Reproducibility
 
 All input data and R scripts are included to reproduce the key results and figures in the manuscript and supplementary materials.
 
-## 📜 License
+## License
 
 This repository is licensed under the [MIT License](https://opensource.org/licenses/MIT). You are free to reuse and adapt the code with appropriate attribution.
 
