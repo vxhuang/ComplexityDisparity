@@ -3,6 +3,18 @@
 
 This repository contains the R code and input data used in our study analyzing disparities in air pollution exposure across different racial/ethnic groups under net-zero decarbonization scenarios in the United States.
 
+## Air Quality Modeling Framework
+
+The modeling framework used in this study is based on WRF-Chem version 3.7.1, which was obtained from the official NCAR repository:
+https://www2.mmm.ucar.edu/wrf/src/WRFV3-Chem-3.7.1.TAR.gz
+
+Meteorological inputs were derived from the NCEP FNL Operational Model Global Tropospheric Analyses:
+https://rda.ucar.edu/datasets/d083002/#
+
+These were processed using the WRF Preprocessing System (WPS) version 3.7.1.
+
+Emissions for the base year 2017 were based on the U.S. Environmental Protection Agency’s National Emissions Inventory (NEI 2017) and were processed using the Sparse Matrix Operator Kernel Emissions (SMOKE) modeling system to generate gridded, speciated, and temporally resolved emission inputs for WRF-Chem.
+
 ## Repository Structure
 
 - `input_data/` — All input files used for the analysis (e.g., emissions, population, and spatial data)
@@ -18,17 +30,30 @@ This repository contains the R code and input data used in our study analyzing d
 - **Memory**: ≥ 8 GB RAM recommended due to use of raster operations
 - **Typical installation time**: ~5–10 minutes for package setup on a standard desktop computer with a stable internet connection
 
+To install R, visit: [https://cran.r-project.org/](https://cran.r-project.org/) and download the version appropriate for your operating system.
+
 ## R Package Dependencies
 
-Install required packages using:
+Install required packages and their tested versions using:
 
 ```r
 install.packages(c(
-  "tidyverse", "viridis", "tidycensus", "raster", "sf", "exactextractr", 
-  "ggridges", "forcats", "ggpubr", "readxl", "gridExtra", 
-  "ggtext", "scales", "ggnewscale"
+  "tidyverse",        # 2.0.0
+  "viridis",          # 0.6.4
+  "tidycensus",       # 1.4.3
+  "raster",           # 3.6-26
+  "sf",               # 1.0-14
+  "exactextractr",    # 0.9.1
+  "ggridges",         # 0.5.4
+  "forcats",          # 1.0.0
+  "ggpubr",           # 0.6.0
+  "readxl",           # 1.4.3
+  "gridExtra",        # 2.3
+  "ggtext",           # 0.1.2
+  "scales",           # 1.3.0
+  "ggnewscale"        # 0.4.9
 ))
-````
+These versions were tested in our analysis. Newer versions may also work but are not guaranteed.
 
 ## Running the Code
 
