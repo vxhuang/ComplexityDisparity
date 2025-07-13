@@ -53,6 +53,7 @@ install.packages(c(
   "scales",           # 1.3.0
   "ggnewscale"        # 0.4.9
 ))
+````
 These versions were tested in our analysis. Newer versions may also work but are not guaranteed.
 
 ## Running the Code
