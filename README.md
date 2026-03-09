@@ -5,23 +5,29 @@ This repository contains the R code and input data used in our study analyzing d
 
 ## Air Quality Modeling Framework
 
-The modeling framework used in this study is based on WRF-Chem version 3.7.1, which was obtained from the official NCAR repository:
-https://www2.mmm.ucar.edu/wrf/src/WRFV3-Chem-3.7.1.TAR.gz
+The modeling framework used in this study is based on the Community Multiscale Air Quality (CMAQ) model version 5.5 (https://www.epa.gov/cmaq). Simulations were conducted over the contiguous United States at 12 km horizontal resolution for 2017 and 2050 under Reference and Net-Zero scenarios.
 
-Meteorological inputs were derived from the NCEP FNL Operational Model Global Tropospheric Analyses:
-https://rda.ucar.edu/datasets/d083002/#
+Meteorological inputs were obtained from the EPA EQUATES WRF dataset (https://www.epa.gov/cmaq/equates), and boundary conditions were derived from the 108-km Northern Hemisphere CMAQ domain.
 
-These were processed using the WRF Preprocessing System (WPS) version 3.7.1.
-
-Emissions for the base year 2017 were based on the U.S. Environmental Protection Agency’s National Emissions Inventory (NEI 2017) and were processed using the Sparse Matrix Operator Kernel Emissions (SMOKE) modeling system to generate gridded, speciated, and temporally resolved emission inputs for WRF-Chem.
+Emissions for the base year 2017 were based on the U.S. Environmental Protection Agency’s National Emissions Inventory (NEI 2017: https://www.epa.gov/air-emissions-inventories/2017-national-emissions-inventory-nei-data). Biogenic emissions were calculated using the in-line Biogenic Emission Inventory System (BEIS). Future emissions were mapped from GCAM-USA sectors to CMAQ emission streams. The CB6r3 gas-phase mechanism and AERO7 aerosol module were used in all simulations.
 
 ## Repository Structure
 
-- `input_data/` — All input files used for the analysis (e.g., emissions, population, and spatial data)
-- `rtr_disparity_numbers.R`, `rtr_disparity_numbers_ssp.R` — Scripts for calculating disparity metrics
-- `rtr_fig2.R` to `rtr_fig6.R` — Scripts for generating manuscript figures
-- `rtr_fig4_si.R`, `rtr_fig5_si_*.R` — Scripts for generating Supplementary Information (SI) figures
-- `README.md` — This file
+0. `input_data/` — All input files used for the analysis (e.g., emissions, population, and spatial data)
+1. "rtr_disparity_consistency_numberplup.R": code to generate results for main text discussing how disparity changed across scenarios
+2. "rtr_disparity_numberplug.R": code to generate results for main text discussing state level changes in disparities
+3. "rtr_disparity_numbers_ssp.R": code to generate results for state level disparity using SSP3 and SSP5 demographics
+4. "rtr_disparity_numbers.R" code to generate results for state level disparity
+5. "rtr_fig2.R": code to generate main text figure 2 (national and state level emissions)
+5. "rtr_fig3_maps.R": code to generate main text figure 3 (maps)
+6. "rtr_fig4_boxplots.R": code to generate main text figure 4 (boxplots)
+7. "rtr_boxplots_si.R": code to generate SI boxplot figure (boxplots)
+8. "rtr_fig5_arrow.R": code to generate main text figure 5 (state level arrow diagram)
+9. "rtr_arrow_si_v2.R": code to generate SI state-level arrow diagram figures
+10. "rtr_si_race_distro.R": code to generate SI figure showing the distribution of population across racial groups
+11. "rtr_state_change_table.R": code to generate supplement data sheet
+12. "rtr_state_maps.R": code to generate state-specific pollutant distribution maps for the supplement
+13. "rtr_fig6.R": code to generate main text figure 6 (consistency across scenarios)
 
 ## System Requirements
 
