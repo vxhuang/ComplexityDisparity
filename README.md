@@ -74,15 +74,16 @@ To reproduce the results, run the scripts in the following general order:
 2. **Figure generation (main text)**
 
    * `rtr_fig2.R` → Figure 2
-   * `rtr_fig3.R` → Figure 3
-   * `rtr_fig4.R` → Figure 4
-   * `rtr_fig5.R` → Figure 5
+   * `rtr_fig3_maps.R` → Figure 3
+   * `rtr_fig4_boxplots.R` → Figure 4
+   * `rtr_fig5_arrow.R` → Figure 5
    * `rtr_fig6.R` → Figure 6
 
 3. **Supplementary figures**
 
-   * `rtr_fig4_si.R` → SI Figure 4
-   * `rtr_fig5_si_ref2050.R`, `rtr_fig5_si_ssp3.R`, etc. → scenario-specific SI versions of Figure 5
+   * `rtr_boxplots_si.R` → SI Boxplot figures
+   * `rtr_arrow_si_v2.R` → SI state-level arrow diagram figures
+   * `rtr_si_race_distro.R` → SI distributions of population across racial groups
 
 Each script is self-contained and will read from the `input_data/` folder and write outputs (figures and processed results) to the working directory.
 
