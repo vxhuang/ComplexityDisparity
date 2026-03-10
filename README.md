@@ -16,18 +16,15 @@ Emissions for the base year 2017 were based on the U.S. Environmental Protection
 0. `input_data/` — All input files used for the analysis (e.g., emissions, population, and spatial data)
 1. `rtr_disparity_consistency_numberplup.R`: code to generate results for main text discussing how disparity changed across scenarios
 2. `rtr_disparity_numberplug.R`: code to generate results for main text discussing state level changes in disparities
-3. `rtr_disparity_numbers_ssp.R`: code to generate results for state level disparity using SSP3 and SSP5 demographics
-4. `rtr_disparity_numbers.R` code to generate results for state level disparity
-5. `rtr_fig2.R`: code to generate main text figure 2 (national and state level emissions)
-5. `rtr_fig3_maps.R`: code to generate main text figure 3 (maps)
-6. `rtr_fig4_boxplots.R`: code to generate main text figure 4 (boxplots)
-7. `rtr_boxplots_si.R`: code to generate SI boxplot figure (boxplots)
-8. `rtr_fig5_arrow.R`: code to generate main text figure 5 (state level arrow diagram)
-9. `rtr_arrow_si_v2.R`: code to generate SI state-level arrow diagram figures
-10. `rtr_si_race_distro.R`: code to generate SI figure showing the distribution of population across racial groups
-11. `rtr_state_change_table.R`: code to generate supplement data sheet
-12. `rtr_state_maps.R`: code to generate state-specific pollutant distribution maps for the supplement
-13. `rtr_fig6.R`: code to generate main text figure 6 (consistency across scenarios)
+3. `rtr_fig2_emissions.R`: code to generate main text figure 2 (national and state level emissions)
+4. `rtr_fig3_maps.R`: code to generate main text figure 3 (maps)
+5. `rtr_fig4_boxplots.R`: code to generate main text figure 4 (boxplots)
+6. `rtr_boxplots_si.R`: code to generate SI boxplot figure (boxplots)
+7. `rtr_fig5_arrow.R`: code to generate main text figure 5 (state level arrow diagram)
+8. `rtr_si_race_boxplots.R`: code to generate SI figure showing the distribution of population across racial groups
+10. `rtr_state_change_table.R`: code to generate supplement data sheet
+11. `rtr_state_maps.R`: code to generate state-specific pollutant distribution maps for the supplement
+12. `rtr_fig6_consistency.R`: code to generate main text figure 6 (consistency across scenarios)
 
 ## System Requirements
 
@@ -73,17 +70,17 @@ To reproduce the results, run the scripts in the following general order:
 
 2. **Figure generation (main text)**
 
-   * `rtr_fig2.R` → Figure 2
+   * `rtr_fig2_emissions.R` → Figure 2
    * `rtr_fig3_maps.R` → Figure 3
    * `rtr_fig4_boxplots.R` → Figure 4
    * `rtr_fig5_arrow.R` → Figure 5
-   * `rtr_fig6.R` → Figure 6
+   * `rtr_fig6_consistency.R` → Figure 6
 
 3. **Supplementary figures**
 
-   * `rtr_boxplots_si.R` → SI Boxplot figures
-   * `rtr_arrow_si_v2.R` → SI state-level arrow diagram figures
-   * `rtr_si_race_distro.R` → SI distributions of population across racial groups
+   * `rtr_si_race_boxplots.R` → SI Boxplot figures
+   * `rtr_si_state_change_table.R` → SI state-level arrow diagram figures
+   * `rtr_si_state_maps.R` → SI state-specific pollutant distribution maps
 
 Each script is self-contained and will read from the `input_data/` folder and write outputs (figures and processed results) to the working directory.
 
